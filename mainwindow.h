@@ -13,6 +13,7 @@ class MainWindow : public QMainWindow
 
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void keyPressEvent(QKeyEvent *event);
 
 public:
     explicit MainWindow(QWidget *parent = 0);

@@ -3,6 +3,7 @@
 
 #include <QTime>
 #include <QtWidgets>
+#include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,6 +22,19 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+   if (event->key() == Qt::Key_Left) {
+       posx-=5;
+   }else if (event->key() == Qt::Key_Right) {
+       posx+=5;
+   }else if (event->key() == Qt::Key_Up) {
+       posy-=5;
+   }else if (event->key() == Qt::Key_Down) {
+       posy+=5;
+   }
 }
 
 void MainWindow::paintEvent(QPaintEvent *)
