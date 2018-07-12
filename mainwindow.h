@@ -11,12 +11,17 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
+    int posx=0;
+    int posy=0;
 };
 
 #endif // MAINWINDOW_H
