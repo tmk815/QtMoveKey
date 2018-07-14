@@ -5,6 +5,8 @@
 #include <QtWidgets>
 #include <QKeyEvent>
 
+#define MOVEMENT 50
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -27,13 +29,13 @@ MainWindow::~MainWindow()
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
    if (event->key() == Qt::Key_Left) {
-       posx-=5;
+       posx-=MOVEMENT;
    }else if (event->key() == Qt::Key_Right) {
-       posx+=5;
+       posx+=MOVEMENT;
    }else if (event->key() == Qt::Key_Up) {
-       posy-=5;
+       posy-=MOVEMENT;
    }else if (event->key() == Qt::Key_Down) {
-       posy+=5;
+       posy+=MOVEMENT;
    }
 }
 
